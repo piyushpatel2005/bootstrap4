@@ -25,8 +25,10 @@
                   <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                  <a href="#reserve" class="btn btn-warning btn-sm btn-block">
-                    Reserve a Table
+                  <a type="button" class="btn btn-warning btn-sm btn-block"
+                    data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
+                     data-placement="bottom" href="#reserve">
+                    Reserve Table
                   </a>
                 </div>
             </div>
@@ -41,15 +43,51 @@
           <img src="img/logo.png" height="30" width="41" alt="Logo">
         </a>
         <div class="collapse navbar-collapse" id="Navbar">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item active"><a href="./index.html" class="nav-link"><span class="fa fa-home fa-lg"></span> Home</a></li>
             <li class="nav-item"><a href="./aboutus.html" class="nav-link"><span class="fa fa-info fa-lg"></span> About</a></li>
             <li class="nav-item"><a href="#" class="nav-link"><span class="fa fa-list fa-lg"></span> Menu</a></li>
             <li class="nav-item"><a href="./contactus.html" class="nav-link"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
           </ul>
+          <span class="navbar-text">
+            <a data-toggle="modal" data-target="#loginModal">
+              <span class="fa fa-sign-in"></span> Login
+            </a>
+          </span>
         </div>
       </div>
     </nav>
+    <div id="loginModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" role="content">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Login </h4>
+            <button class="close" type="button" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form class="form-inline">
+              <div class="form-group">
+                <label for="email" class="sr-only">Email address</label>
+                <input type="email" class="form-control form-control-sm mr-1" id="email" placeholder="Email address">
+              </div>
+              <div class="form-group">
+                <label for="password" class="sr-only">Password</label>
+                <input type="password" class="form-control form-control-sm mr-1" id="password" placeholder="Password">
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input"> Remember Me
+                </label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default btn-sm" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary btn-sm" type="submit">Sign In</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container">
         <div class="row row-content align-items-center">
             <div class="col-sm-4 col-md-3 flex-last">
@@ -222,6 +260,11 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/tether/dist/js/tether.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
 
 </body>
 
